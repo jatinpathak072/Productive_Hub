@@ -104,6 +104,8 @@ body.dark .complete-task span,
 body.dark .complete-task .txt{
   color: var(--black);
 }
+
+
 /* Text */
 body.dark span,
 body.dark p,
@@ -993,7 +995,7 @@ footer {
   right: 5%;
   top: 5%;
   cursor: pointer;
-  color: var(--white);
+  color: var(--black);
 }
 
 #todo-cancel i{
@@ -1194,7 +1196,7 @@ footer {
   right: 2%;
   top: 10%;
   cursor: pointer;
-  color: #fbfbfb;
+  color: var(--black);
 }
 
 .cancel-planner i{
