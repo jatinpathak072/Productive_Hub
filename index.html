@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <title>Productive-Hub</title>
+</head>
+<body>
+  <main>
+    <nav>
+      <div class="logo">
+        <h2>Productive_Hub</h2>
+      </div>
+      <div class="nav-icons">
+        <div class="toggle"></div>
+        <div class="profile-icon">
+          <i class="ri-user-fill"></i>
+        </div>
+      </div>
+    </nav>
+    <section class="hero-container" id="hero-container">
+      <div class="greeting">
+        <div class="greeting-text">
+          <h2 id="greet"></h2>
+          <p>Stay focused and make today productive.</p>
+        </div>
+        <div class="date-time">
+          <div class="calendar">
+            <i class="ri-calendar-2-line"></i>
+            <p id="date"></p>
+          </div>
+          <span></span>
+          <div class="time-zone">
+            <i class="ri-time-line"></i>
+            <p id="time"></p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="cardtime-container">
+            <div class="card-head">
+              <div class="time-icon">
+                <i class="ri-time-fill"></i>
+              </div>
+              <span>Date & Time</span>
+            </div>
+            <div class="time-container">
+              <p>
+                <span class="card-time" id="card-time"></span>
+                <span class="time-period" id="period"></span>
+              </p>
+              <p>
+                <span class="card-day" id="card-date"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="weather-card card" id="weather-card">
+          <div class="card-head">
+            <div class="weather-icon">
+              <i class="ri-cloud-fill"></i>
+            </div>
+            <span>Weather</span>
+          </div>
+          <div class="weather-container">
+            <div class="weather-content"></div>
+            <div class="btm-content"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <div class="time-icon">
+              <i class="ri-double-quotes-l"></i>
+            </div>
+            <span>Motivation Quote</span>
+          </div>
+          <div class="quote-container">
+            <div class="qut-text-container">
+              <p class="quote" id="quote"></p>
+              <span class="author" id="author"></span>
+            </div>
+            <button class="qut-btn" id="qut-btn"><i class="ri-refresh-line"></i> New Quote</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+              <div class="progress-icon">
+                  <i class="ri-signal-cellular-3-line"></i>
+              </div>
+              <span>Today's Progress</span>
+          </div>
+          <div class="progress-circle">
+            <div class="circle" id="circle">
+                <div class="circle-content">
+                    <h2 id="progressPercent">0%</h2>
+                    <span>Completed</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-info">
+            <div class="info">
+                <h3 id="completed">0</h3>
+                <span>Completed</span>
+            </div>
+        
+            <div class="info">
+                <h3 id="pending">0</h3>
+                <span>Pending</span>
+            </div>
+        
+            <div class="info">
+                <h3 id="total">0</h3>
+                <span>Total</span>
+            </div>
+        </div>
+      </div>
+      </div>
+      <div class="tools-container">
+        <span>Your Tools</span>
+        <div class="tool-card-container">
+          <div class="tool-card todo-color">
+            <div class="todo-img bg-purple">
+              <img src="assests/todo-list.svg" alt="Todo-list">
+            </div>
+            <div class="todo-text">
+              <h4>Todo List</h4>
+              <p>Add tasks, mark important, complete and track progress.</p>
+            </div>
+            <div class="btm-text">
+              <div class="tick-icon text-purple">
+                <i class="ri-check-double-line"></i>
+              </div>
+              <div class="complete-task">
+                <span id="count" class="text-purple">0</span>
+                <p class="txt">Task left</p>
+              </div>
+            </div>
+            <button class="purple-btn tool-btn">Open <i class="ri-arrow-right-line"></i></button>
+          </div>
+          <div class="tool-card daily-color">
+            <div class="todo-img bg-blue">
+              <img src="assests/daily-planner.png" alt="daily-planner">
+            </div>
+            <div class="todo-text">
+              <h4>Daily Planner</h4>
+              <p>Plan Your day by time slots and stay organized.</p>
+            </div>
+            <div class="btm-text">
+              <div class="tick-icon text-blue">
+                <i class="text-blue ri-time-line"></i>
+              </div>
+              <div class="complete-task">
+                <span class="text-blue" id="completedCount">0</span>
+                <p class="txt">PLans Today</p>
+              </div>
+            </div>
+            <button class="tool-btn blue-btn" id="planner-btn">Open <i class="ri-arrow-right-line"></i></button>
+          </div>
+          <div class="tool-card pomodoro-color">
+            <div class="todo-img bg-pomorodo">
+              <img src="assests/pomodoro.png" alt="pomodoro">
+            </div>
+            <div class="todo-text">
+              <h4>Pomodoro Timer</h4>
+              <p>Stay focused using Pomodoro technique.</p>
+            </div>
+            <div class="btm-text">
+              <div class="tick-icon text-pomodoro">
+                <i class="ri-timer-line"></i>
+              </div>
+              <div class="complete-task">
+                <span class="text-pomodoro">25:00</span>
+                <p class="txt">Work Session</p>
+              </div>
+            </div>
+            <button class="tool-btn pomodoro-btn" id="pomodoro">Open <i class="ri-arrow-right-line"></i></button>
+          </div>
+          <div class="tool-card goals-color">
+            <div class="todo-img bg-green">
+              <img src="assests/goals.png" alt="Goals">
+            </div>
+            <div class="todo-text">
+              <h4>Daily Goals</h4>
+              <p>Set your goals and track your daily achievement.</p>
+            </div>
+            <div class="btm-text">
+              <div class="tick-icon text-green">
+                <i class="ri-target-line"></i>
+              </div>
+              <div class="complete-task">
+                <span class="text-green">0</span>
+                <p class="txt">Goals Set</p>
+              </div>
+            </div>
+            <button class="tool-btn green-btn" id="addGoalSec" type="button">
+              Open <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Productivity Hub. All Rights Reserved.
+        Stay Productive. Stay Motivated.</p>
+    </footer>
+    <section id="pomodoro-sec" class="pomodoro-sec">
+      <div class="timer-container">
+        <button class="cancel-pomodoro" type="button">
+          <i class="ri-close-line"></i>
+        </button>
+        <div class="timer">
+          <span id="time-elem"></span>
+        </div>
+        <div class="btn-container">
+          <button class="start" id="strt"><i class="ri-play-line"></i> Start</button>
+          <button class="stop" id="stp"><i class="ri-stop-circle-line"></i> Stop</button>
+          <button class="reset" id="reset"><i class="ri-refresh-line"></i> Reset</button>
+        </div>
+      </div>
+    </section>
+    <section class="todo-sec" id="todo-sec">
+      <div class="main-container">
+        <div class="todo-container">
+          <header class="todo-head">
+            <div class="left-head">
+              <div class="left-icon"><i class="ri-check-line"></i></div>
+              <div class="left-text">
+                <h2>My Todo List</h2>
+                <p>Stay organized, get things done.</p>
+              </div>
+            </div>
+            <button type="button" id="todo-cancel">
+              <i class="ri-close-line"></i>
+            </button>
+          </header>
+          <div class="inp-container">
+            <div class="list-inp">
+              <input id="input-text" type="text" placeholder="Add a new Task...">
+              <button id="add-Task">Add Task</button>
+            </div>
+            <div class="list-container">
+              <div class="todos"></div>
+            </div>
+            <div class="todo-btm">
+              <p>💜 Small Steps every day leads to big result</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="planner-sec">
+        <div class="planner-container">
+          <header class="planner-head">
+            <div class="left-planner">
+              <button class="cancel-planner" type="button">
+                <i class="ri-close-line"></i>
+              </button>
+              <h2>Daily Planner</h2>
+              <span>Plan your day to be more productive</span>
+            </div>
+            <div class="right-planner">
+              <span id="planner-date" class="date"></span>
+              <p>Have a productive day! ✨</p>
+            </div>
+          </header>
+          <div class="main-planner"></div>
+        </div>
+    </section>
+    <section class="goal-sec">
+      <div class="goal-container">
+          <header class="goal-head">
+            <button class="cancel-goal" type="button">
+              <i class="ri-close-line"></i>
+              </button>
+              <h2><i class="ri-target-line"></i> Daily Goals</h2>
+              <span>Stay focused and achieve more every day!</span>
+          </header>
+          <div class="main-goalContent">
+              <!-- Left Panel -->
+              <div class="left">
+                  <div class="input-group">
+                      <label for="goalTitle">Goal Title</label>
+                      <input
+                          type="text"
+                          id="goalTitle"
+                          class="goal-title"
+                          placeholder="Enter goal title"
+                      >
+                  </div>
+                  <div class="input-group">
+                      <label for="goalDescription">Description</label>
+                      <textarea
+                          id="goalDescription"
+                          class="goal-description"
+                          placeholder="Write your goal..."
+                      ></textarea>
+                  </div>
+  
+                  <div class="input-group">
+                      <label for="goalDate">Due Date</label>
+                      <input
+                          type="date"
+                          id="goalDate"
+                          class="goal-date"
+                      >
+                  </div>
+  
+                  <button
+                      class="goal-btn"
+                      id="addGoalBtn"
+                  >
+                      <i class="ri-add-line"></i>
+                      Add Goal
+                  </button>
+  
+              </div>
+              <!-- Right Panel -->
+              <div
+                  class="right"
+                  id="goalList"
+              >
+              </div>
+  
+          </div>
+      </div>
+  </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
